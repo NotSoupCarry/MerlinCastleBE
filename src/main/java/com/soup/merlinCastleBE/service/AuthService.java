@@ -1,4 +1,4 @@
-package com.soup.merlinCastleBE.services;
+package com.soup.merlinCastleBE.service;
 
 import com.soup.merlinCastleBE.dto.*;
 import com.soup.merlinCastleBE.enums.Role;
