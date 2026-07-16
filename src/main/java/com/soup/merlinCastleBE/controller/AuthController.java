@@ -1,7 +1,7 @@
 package com.soup.merlinCastleBE.controller;
 
 import com.soup.merlinCastleBE.dto.*;
-import com.soup.merlinCastleBE.services.AuthService;
+import com.soup.merlinCastleBE.service.AuthService;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -28,7 +28,7 @@ public class AuthController {
     }
 
     @PostMapping("/refresh")
-    public ResponseEntity<LoginDTOs.AuthResponse> refresh(@Valid @RequestBody LoginDTOs.RefreshRequest req) {
+    public ResponseEntity<AuthResponse> refresh(@Valid @RequestBody LoginDTOs.RefreshRequest req) {
         return ResponseEntity.ok(authService.refresh(req.refreshToken()));
     }
 }
