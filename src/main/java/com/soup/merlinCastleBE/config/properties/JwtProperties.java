@@ -1,4 +1,4 @@
-package com.soup.merlinCastleBE.config;
+package com.soup.merlinCastleBE.config.properties;
 
 import org.springframework.boot.context.properties.ConfigurationProperties;
 

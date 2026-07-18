@@ -1,6 +1,6 @@
 package com.soup.merlinCastleBE.utils;
 
-import com.soup.merlinCastleBE.config.JwtProperties;
+import com.soup.merlinCastleBE.config.properties.JwtProperties;
 import com.soup.merlinCastleBE.model.User;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;
