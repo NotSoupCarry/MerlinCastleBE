@@ -38,7 +38,6 @@ public class User extends BaseModel implements UserDetails {
     @Builder.Default
     private Role role = Role.USER;
 
-    /** Nome scelto dall'utente, esplicito per non confonderlo con getUsername(). */
     public String getDisplayName() {
         return this.username;
     }
@@ -55,7 +54,7 @@ public class User extends BaseModel implements UserDetails {
         return this.passwordHash;
     }
 
-    /** Il principal è l'email. */
+    /** principal = email. */
     @Override
     public String getUsername() {
         return this.email;
