@@ -1,6 +1,7 @@
 package com.soup.merlinCastleBE.model;
 
 import com.soup.merlinCastleBE.enums.Faction;
+import com.soup.merlinCastleBE.model.base.BaseModel;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -16,11 +17,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class GameSession {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+public class GameSession extends BaseModel {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "room_id", nullable = false)

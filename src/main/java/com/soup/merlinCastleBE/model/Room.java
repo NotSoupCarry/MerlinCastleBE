@@ -1,5 +1,6 @@
 package com.soup.merlinCastleBE.model;
 
+import com.soup.merlinCastleBE.model.base.BaseModel;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,13 +14,9 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class Room {
+public class Room extends BaseModel {
 
     public enum Status { LOBBY, IN_PROGRESS, ENDED }
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
 
     @Column(nullable = false, unique = true, length = 10)
     private String code;
@@ -40,11 +37,7 @@ public class Room {
     @Column(name = "created_at", nullable = false, updatable = false)
     private OffsetDateTime createdAt;
 
-    @Column(name = "ended_at")
-    private OffsetDateTime endedAt;
+    @Column(name = "ended_on")
+    private OffsetDateTime endedOn;
 
-    @PrePersist
-    protected void onCreate() {
-        this.createdAt = OffsetDateTime.now();
-    }
 }

@@ -1,5 +1,6 @@
 package com.soup.merlinCastleBE.model;
 
+import com.soup.merlinCastleBE.model.base.BaseModel;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -13,11 +14,7 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class QuestResult {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+public class QuestResult extends BaseModel {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "game_session_id", nullable = false)

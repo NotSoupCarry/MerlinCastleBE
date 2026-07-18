@@ -2,6 +2,7 @@ package com.soup.merlinCastleBE.model;
 
 import com.soup.merlinCastleBE.enums.Faction;
 import com.soup.merlinCastleBE.enums.GameRoles;
+import com.soup.merlinCastleBE.model.base.BaseModel;
 import jakarta.persistence.*;
 import lombok.*;
 
@@ -15,17 +16,13 @@ import java.util.UUID;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class GamePlayer {
-
-    @Id
-    @GeneratedValue(strategy = GenerationType.UUID)
-    private UUID id;
+public class GamePlayer extends BaseModel {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "game_session_id", nullable = false)
     private GameSession gameSession;
 
-    // NULL se ospite non registrato
+    // NULL if guest account
     @ManyToOne(fetch = FetchType.LAZY, optional = true)
     @JoinColumn(name = "user_id", nullable = true)
     private User user;
